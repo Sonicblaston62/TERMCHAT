@@ -1,6 +1,6 @@
 #!/bin/bash
 IP=$1
-# Set port to 5000 and 5001 by default
+# set 5000 and 5001 as default ports
 RCV_PORT=${2:-5000} 
 SND_PORT=${3:-5001} 
 MSG=""
@@ -14,13 +14,14 @@ fi
 # show help if either -h or --help is entered as the argument
 if [ $IP == "--help" ] || [ $IP == "-h" ]; then 
     echo :
-    echo : Usage: "./chat.sh <IP> [RECEIVER_PORT] [SENDING_PORT]"
+    echo : Usage:
+    echo : ./chat.sh <IP> [RECEIVER_PORT] [SENDING_PORT]
     echo :
-    echo : If no port is specified, 5000 will be used for receiving
-    echo : and 5001 for sending
-    echo : each machine needs to be listening and sending on the opposite port of eachother
-    echo : if machine 1 is listeing on port 5000, machine 2 will have to send on that port
-    echo : machine 1 would have to send on port 5001 and machine 2 would have to listen on that port
+    echo : If no port is specified, 5000 will be used for receiving and 5001 for sending.
+    echo : 
+    echo : Each machine needs to be listening and sending on the opposite port of eachother.
+    echo : If machine 1 is listeing on port 5000, machine 2 will have to send on that port.
+    echo : Machine 1 would have to send on port 5001 and machine 2 would have to listen on that port.
     exit 0
 fi
 echo "Send and receive messages here"
